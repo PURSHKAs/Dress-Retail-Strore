@@ -4,14 +4,18 @@ public class Articolo {
 	private String Codice;
 	private String Nome;
 	private Integer Prezzo;
+	private String Taglia;
+	private String Colore;
 	private Integer Scorta;
 	
-	public Articolo(String Codice, String Nome, int Prezzo, int Scorta) {
+	public Articolo(String Codice, String Nome, int Prezzo, int Scorta, String Taglia, String Colore) {
 		super();
 		this.Codice = Codice;
 		this.Nome = Nome;
 		this.Prezzo = Prezzo;
 		this.Scorta = Scorta;
+		this.Colore = Colore;
+		this.Taglia = Taglia;
 	}
 	
 	public String getCodice() {
@@ -38,5 +42,19 @@ public class Articolo {
 	public void setScorta(Integer scorta) {
 		Scorta = scorta;
 	}
+	public String getTaglia() {
+		return Taglia;
+	}
 
+	public void setTaglia(String taglia) {
+		Taglia = taglia;
+	}
+
+	public String getColore() {
+		return Colore;
+	}
+
+	public void setColore(String colore) {
+		Colore = colore;
+	}
 }
