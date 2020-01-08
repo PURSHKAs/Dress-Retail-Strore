@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class UtenteDao {
 	
 	private static Connection con;
-	private Utente s;
+	private Utente u;
 	
 	public UtenteDao(Connection c) {
 		con = c;
@@ -17,7 +17,7 @@ public class UtenteDao {
 		
 		ResultSet rs;
 	    //query
-	    String query = "SELECT * FROM users where username = '"+username+"' and password = '"+password+"'";
+	    String query = "SELECT * FROM Utente where ? = '"+username+"' and ? = '"+password+"'";
 		try {
 		    
 		    PreparedStatement pst = con.prepareStatement(query);
@@ -25,15 +25,14 @@ public class UtenteDao {
 		    pst.setString(2, password);
 		    rs = pst.executeQuery();
 		    while (rs.next()) {
-		    	String fname = rs.getString("fname");
-		    	String lname = rs.getString("lname");
-		    	String user_name = rs.getString("username");
-		    	String pass_word = rs.getString("password");
-		    	String address = rs.getString("address");
-		    	String phone = rs.getString("phone");
-		    	Integer age = rs.getInt("age");
-		    	Integer status = rs.getInt("status");
-		    	return new Utente(fname, lname, address, phone, age, status, user_name, pass_word);
+		    	String fname = rs.getString("Nome");
+		    	String lname = rs.getString("Cognome");
+		    	String user_name = rs.getString("Username");
+		    	String pass_word = rs.getString("Password");
+		    	String address = rs.getString("Indirizzo");
+		    	String phone = rs.getString("telefono");
+		    	Integer age = rs.getInt("Età");
+		    	return new Utente(fname, lname, address, phone, age, user_name, pass_word);
 		    }
 		    return null;
 		} catch (Exception e) {

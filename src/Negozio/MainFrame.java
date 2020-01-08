@@ -11,6 +11,9 @@ import javax.swing.border.EmptyBorder;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class MainFrame extends JFrame {
 
@@ -22,17 +25,25 @@ public class MainFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(MainFrame.class.getResource("/output-onlinepngtools.png")));		
+		lblNewLabel.setIcon(new ImageIcon(MainFrame.class.getResource("/small.png")));		
 		
-		lblNewLabel.setBounds(151, 27, 148, 70);
+		lblNewLabel.setBounds(131, 29, 180, 70);
 		getContentPane().add(lblNewLabel);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginFrame ln= new LoginFrame(c);
+				ln.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnLogin.setBounds(103, 145, 89, 23);
 		contentPane.add(btnLogin);
 		

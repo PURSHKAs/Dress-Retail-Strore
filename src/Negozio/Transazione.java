@@ -3,27 +3,25 @@ package Negozio;
 import java.util.ArrayList;
 
 public class Transazione {
-	private String id;
+	private String idTrn;
 	private ArrayList<Acquisto> Acquisti = new ArrayList<Acquisto>();
 	private Utente utente;
-	private String NumCarta;
 	private String CodiceAutenticazione;
 	private String IDUtente;
 	
-	public Transazione(String id, Utente utente, String NumCarta, String CodiceAutenticazione, String IDUtente) {
+	public Transazione(String id, Utente utente, String CodiceAutenticazione, String IDUtente) {
 		super();
-		this.id = id;
+		this.idTrn = id;
 		this.utente = utente;
-		this.NumCarta = NumCarta;
 		this.CodiceAutenticazione = CodiceAutenticazione;
 		this.IDUtente = IDUtente;
 	}
 
 	public String getId() {
-		return id;
+		return idTrn;
 	}
 	public void setId(String id) {
-		this.id = id;
+		this.idTrn = id;
 	}
 	public ArrayList<Acquisto> getAcquisto() {
 		return Acquisti;
@@ -36,12 +34,6 @@ public class Transazione {
 	}
 	public void setUtente(Utente utente) {
 		this.utente = utente;
-	}
-	public String getNumCarta() {
-		return NumCarta;
-	}
-	public void setNumCarta(String numCarta) {
-		NumCarta = numCarta;
 	}
 	public String getCodiceAutenticazione() {
 		return CodiceAutenticazione;

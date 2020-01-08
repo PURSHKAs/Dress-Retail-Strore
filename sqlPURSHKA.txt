@@ -1,0 +1,178 @@
+--
+-- Database: `lulilac`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Azienda`
+--
+
+
+CREATE TABLE `Azienda` (
+  `Nome` varchar(255) NOT NULL,
+  `Indirizzo` varchar(500) NOT NULL,
+  `Logo` varchar(255) NOT NULL,
+  `Telefono` varchar(255) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Azienda`
+--
+
+INSERT INTO `Azienda` (`Nome`, `Indirizzo`, `Logo`, `Telefono`) VALUES
+('Purshka Company', 'PiKA Avenue 69, Canada, United States', 'D:\\PATH_TO_LOGO\\logoBig.png', '+1-(515)-303-2505');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Articolo`
+--
+
+CREATE TABLE `Articolo` (
+  `id` int(255) NOT NULL,
+  `Codice` varchar(255) NOT NULL,
+  `Nome` varchar(255) NOT NULL,
+  `Prezzo` int(255) NOT NULL,
+  `Scorta` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Articolo`
+--
+
+INSERT INTO `Articolo` (`id`, `Codice`, `Nome`, `Prezzo`, `Scorta`) VALUES
+(1, '4515701372029', 'Termos Miniso', 130000, 100),
+(2, '97811189780859000', 'Financial Accounting 3e : IFRS Edition', 200000, 250),
+(3, '8993838005069', 'Giant Faical Tissue', 15000, 1000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Transazione`
+--
+
+CREATE TABLE `Transazione` (
+  `id` int(255) NOT NULL,
+  `IdTrx` varchar(255) NOT NULL,
+  `IdArticolo` longtext NOT NULL,
+  `QtyArt` longtext NOT NULL,
+  `PrezzoArticolo` longtext NOT NULL,
+  `Pagamento` enum('1','2','3') NOT NULL,
+  `Saldo` varchar(255) NOT NULL,
+  `CodAutenticaz` varchar(50) DEFAULT NULL
+) 
+
+--
+-- Dumping data for table `Transazione`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Utente`
+--
+
+CREATE TABLE `Utente` (
+  `id` int(255) NOT NULL,
+  `Username` varchar(200) NOT NULL,
+  `Nome` varchar(200) NOT NULL,
+  `Cognome` varchar(200) NOT NULL,
+  `Password` varchar(200) NOT NULL,
+  `Indirizzo` varchar(500) NOT NULL,
+  `Età` int(100) NOT NULL,
+  `Telefono` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `Utente` (`id`, `Username`, `Nome`, `Cognome`, `Password`, `Indirizzo`, `Età`, `Telefono`) VALUES
+(1, 'cassiere', 'Amelia', 'Nur Ikwan', '098f6bcd4621d373cade4e832627b4f6', 'Jl. Jalan Setiap Hari', 27, '085327656565'),
+(2, 'cassiere1', 'Rangga', 'Huang', '098f6bcd4621d373cade4e832627b4f6', 'Jl. Untuk Cepat Kaya', 30, '0857000707');
+
+
+--
+-- Indexes for table `Articolo`
+--
+ALTER TABLE `Articolo`
+  ADD PRIMARY KEY (`id`);
+
+
+
+--
+-- Indexes for table `Transazione`
+--
+ALTER TABLE `Transazione`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Utente`
+--
+ALTER TABLE `Utente`
+  ADD PRIMARY KEY (`id`);
+
+
+--
+-- AUTO_INCREMENT for table `Articolo`
+--
+ALTER TABLE `Articolo`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `Transazione`
+--
+ALTER TABLE `Transazione`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT for table `Utente`
+--
+ALTER TABLE `Utente`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
