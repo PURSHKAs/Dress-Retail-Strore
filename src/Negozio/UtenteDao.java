@@ -32,7 +32,9 @@ public class UtenteDao {
 		    	String address = rs.getString("Indirizzo");
 		    	String phone = rs.getString("telefono");
 		    	Integer age = rs.getInt("Età");
-		    	return new Utente(fname, lname, address, phone, age, user_name, pass_word);
+		    	Integer stato =rs.getInt("Stato");
+		    	if(stato == 1) return new Utente(fname, lname, address, phone, age, stato, user_name, pass_word);
+		    	else if (stato==2) return new Manager (fname, lname, address, phone, age, stato, user_name, pass_word);
 		    }
 		    return null;
 		} catch (Exception e) {

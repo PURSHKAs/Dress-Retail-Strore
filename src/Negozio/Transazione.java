@@ -2,6 +2,8 @@ package Negozio;
 
 import java.util.ArrayList;
 
+
+
 public class Transazione {
 	private String idTrn;
 	private ArrayList<Acquisto> Acquisti = new ArrayList<Acquisto>();
@@ -15,6 +17,22 @@ public class Transazione {
 		this.utente = utente;
 		this.CodiceAutenticazione = CodiceAutenticazione;
 		this.IDUtente = IDUtente;
+	}
+
+	public Transazione(String trxID, Controller c) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Transazione(String trxID, Controller c, String idCliente) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Transazione(String trxID, Controller c, String idCliente, String cardNum, String approvalCode) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Transazione(String trxID, Controller c, String cardNum, String approvalCode) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getId() {
@@ -46,6 +64,17 @@ public class Transazione {
 	}
 	public void setIDUtente(String iDUtente) {
 		IDUtente = iDUtente;
+	}
+	
+	public void addAcquisto(Acquisto acquisto) {
+		Acquisti.add(acquisto);
+	}
+	public Integer getentrata() {
+		Integer total = 0;
+		for(Acquisto acquisto : Acquisti) {
+			total+=acquisto.getTotal();
+		}
+		return total;
 	}
 
 }

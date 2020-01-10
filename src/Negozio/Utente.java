@@ -8,8 +8,9 @@ public class Utente {
 	private int Età;
 	private String Username;
 	private String Password;
+	private Integer Stato;
 
-	public Utente (String Nome, String Cognome, String Indirizzo, String telefono, int età, String Username, String Password) {
+	public Utente (String Nome, String Cognome, String Indirizzo, String Telefono, int Età, Integer Stato,  String Username, String Password) {
 		super();
 		this.Nome = Nome;
 		this.Cognome = Cognome;
@@ -18,11 +19,22 @@ public class Utente {
 		this.Età = Età;
 		this.Username = Username;
 		this.Password = Password;
+		this.Stato = Stato;
 	}
 
-	public Utente(String fname, String lname, String address, String phone, Integer age, Integer status,String user_name, String pass_word) {
-		
+
+
+	public Integer getStato() {
+		return Stato;
 	}
+
+
+
+	public void setStato(Integer stato) {
+		Stato = stato;
+	}
+
+
 
 	public String getNome() {
 		return Nome;

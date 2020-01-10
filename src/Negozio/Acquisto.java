@@ -13,6 +13,10 @@ public class Acquisto {
 		this.Prezzo = Prezzo;
 	}
 	
+	public Acquisto(Articolo articolo2, Integer qty) {
+		
+	}
+
 	public Articolo getArticolo() {
 		return articolo;
 	}
