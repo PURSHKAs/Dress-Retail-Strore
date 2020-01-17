@@ -26,14 +26,15 @@ public class AziendaDao {
 		    PreparedStatement pst = con.prepareStatement(query);
 		    rs = pst.executeQuery();
 		    while (rs.next()) {
-		    	String nome = rs.getString("name");
-		    	String indirizzo = rs.getString("address");
-		    	String logo = rs.getString("logo");
-		    	String telefono = rs.getString("phone");
+		    	String nome = rs.getString("Nome");
+		    	String indirizzo = rs.getString("Indirizzo");
+		    	String logo = rs.getString("Logo");
+		    	String telefono = rs.getString("Telefono");
 		    	return new AziendaDao(nome, indirizzo, logo, telefono);
 		    }
 		    return null;
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.err.println("Got an exception! ");
 		    System.err.println(e.getMessage());
 		}
